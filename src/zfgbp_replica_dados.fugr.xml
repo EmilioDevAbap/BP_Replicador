@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Replicar dados BP</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGBP_REPLICA_DADOSTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGBP_REPLICA_DADOS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMBP_BUPA_OUTBOUND_MAIN</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Enviar dados BP</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_QUEUE_ID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>PRX_SCNT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_RECEIVER_LIST</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SXI_ADDRESSES</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_AUDIT_LIST</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ABA_BUPA_TT_AA</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CT_BP_EXTERN</PARAMETER>
+       <TYP>BUS_EI_EXTERN_T</TYP>
+      </RSCHA>
+     </CHANGING>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_MESSAGE_ID</PARAMETER>
+       <TYP>SXMSMGUID</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_QUEUE_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Proxy Runtime: Serialization Context</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RECEIVER_LIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>XI: Table of Addresses</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_AUDIT_LIST</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MESSAGE_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>XI: ID de mensagem</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CT_BP_EXTERN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Interface externa de parceiros negócios complexa (tab.)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMBP_TRIGGER_CHANGES_BP</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Alterar dados BP</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_QUEUE_ID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>PRX_SCNT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_RECEIVER_LIST</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SXI_ADDRESSES</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_AUDIT_LIST</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ABA_BUPA_TT_AA</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CT_BP_EXTERN</PARAMETER>
+       <TYP>BUS_EI_EXTERN_T</TYP>
+      </RSCHA>
+     </CHANGING>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_QUEUE_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Proxy Runtime: Serialization Context</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RECEIVER_LIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>XI: Table of Addresses</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_AUDIT_LIST</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CT_BP_EXTERN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Interface externa de parceiros negócios complexa (tab.)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
